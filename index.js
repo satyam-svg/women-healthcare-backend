@@ -9,6 +9,8 @@ const multer = require('multer');
 const fs = require('fs');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
+
+
 // Initialize express app
 const app = express();
 const PORT = 3000;
@@ -120,6 +122,10 @@ app.post('/login', async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: 'Error logging in', error });
   }
+});
+
+app.get('/hello', (req, res) => {
+  res.send('Hello World');
 });
 
 // Route: Generate AI Doctor Response with optional Image Upload
